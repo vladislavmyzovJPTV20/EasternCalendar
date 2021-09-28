@@ -18,41 +18,15 @@ public class EasternCalendar {
      */
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Введите ваш год рождения: ");
+        System.out.print("Введите год: ");
         int year = scanner.nextInt();
-        //int animals = (year + 8) % 12;
-        //int colors1 = year % 10;
-        //int colors2 = (year + 1) % 5;
-        int colors1;
-        int colors2;
-        int animals;
-        
+        int rule = (year/10)*10; // Делим введённый год на десять, а потом умножаем на десять
+        int colour1 = year - rule; // Вычитаем rule от вашего года рождения и получаем остаток
+        int animals = year%12; // Делим год нашего рождения на 12 с остатком, чтобы в будущем определить животное
+
         System.out.print("Вы родились в год ");
-        
-        switch(colors1 = year % 10) {
-            case 0:
-            case 1:
-                System.out.print("бел");
-                break;
-            case 2:
-            case 3:
-                System.out.print("чёрн");
-                break;
-            case 4:
-            case 5:
-                System.out.print("зелён");
-                break;
-            case 6:
-            case 7:
-                System.out.print("красн");
-                break;
-            case 8:
-            case 9:
-                System.out.print("жёлт");
-                break;
-            }
-        
-        switch(colors2 = (year + 1) % 5) {
+
+        switch (animals) { // Создаем условний оператор свитч-кейс для того, чтобы сравнивать наше значение с другими значениями
             case 0:
             case 1:
             case 2:
@@ -62,54 +36,99 @@ public class EasternCalendar {
             case 9:
             case 10:
             case 11:
-                System.out.print("ой ");
-                break;
-            case 6:
-            case 7:
-            case 8:
-                System.out.print("ого ");
-                break;
-            }
-        
-        switch(animals = (year + 8) % 12) {        
+        switch (colour1) {
             case 0:
-                System.out.print("крысы");
-                break;
             case 1:
-                System.out.print("коровы");
+                System.out.print("белой ");
                 break;
             case 2:
-                System.out.print("тигра");
-                break;
             case 3:
-                System.out.print("зайца");
+                System.out.print("черной ");
                 break;
             case 4:
-                System.out.print("дракона");
-                break;
             case 5:
-                System.out.print("змеи");
+                System.out.print("зеленой ");
                 break;
             case 6:
-                System.out.print("лошади");
-                break;
             case 7:
-                System.out.print("овцы");
+                System.out.print("красной ");
                 break;
             case 8:
-                System.out.print("обезьяны");
-                break;
             case 9:
-                System.out.print("курицы");
+                System.out.print("желтой ");
                 break;
-            case 10:
-                System.out.print("собаки");
-                break;
-            case 11:
-                System.out.print("свиньи");
+            default:
                 break;
         }
+                break;
             
+            case 6:
+            case 7:
+            case 8:
+        switch (colour1) {
+            case 0:
+            case 1:
+                System.out.print("белого ");
+                break;
+            case 2:
+            case 3:
+                System.out.print("черного ");
+                break;
+            case 4:
+            case 5:
+                System.out.print("зеленого ");
+                break;
+            case 6:
+            case 7:
+                System.out.print("красного ");
+                break;
+            case 8:
+            case 9:
+                System.out.print("желтого ");
+                break;
+            default:
+                break;
+        }
+                break;
+        }
+
+        switch (animals) {
+            case 0:
+                System.out.println("обезьяны!");
+                break;
+            case 1:
+                System.out.println("курицы!");
+                break;
+            case 2:
+                System.out.println("собаки!");
+                break;
+            case 3:
+                System.out.println("свиньи!");
+                break;
+            case 4:
+                System.out.println("крысы!");
+                break;
+            case 5:
+                System.out.println("коровы!");
+                break;
+            case 6:
+                System.out.println("тигра!");
+                break;
+            case 7:
+                System.out.println("кролика!");
+                break;
+            case 8:
+                System.out.println("дракона!");
+                break;
+            case 9:
+                System.out.println("змеи!");
+                break;
+            case 10:
+                System.out.println("лошади!");
+                break;
+            case 11:
+                System.out.println("овцы!");
+                break;
+        }
     }
-    
 }
